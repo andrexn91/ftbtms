@@ -51,7 +51,8 @@ async function checkAdminForVisualization() {
     if (!token) return;
 
     try {
-        const res = await fetch("http://localhost:3000/auth/profile", {
+        //const res = await fetch("http://localhost:3000/auth/profile", {
+        const res = await fetch("https://ftbtms.duckdns.org/api/auth/profile", {
             headers: { "Authorization": `Bearer ${token}` }
         });
         const user = await res.json();

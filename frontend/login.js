@@ -25,7 +25,8 @@ async function login() {
     const username = document.getElementById('login-username').value;
     const password = document.getElementById('login-password').value;
 
-    const response = await fetch('http://localhost:3000/auth/login', {
+    //const response = await fetch('http://localhost:3000/auth/login', {
+    const response = await fetch('https://ftbtms.duckdns.org/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
@@ -54,7 +55,8 @@ async function register() {
     const username = document.getElementById('register-username').value;
     const password = document.getElementById('register-password').value;
 
-    const response = await fetch('http://localhost:3000/auth/register', {
+    //const response = await fetch('http://localhost:3000/auth/register', {
+    const response = await fetch('https://ftbtms.duckdns.org/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })

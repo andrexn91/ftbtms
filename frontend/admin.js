@@ -96,7 +96,8 @@ async function fetchUsersToBeAssociated() {
 
     // Fetch di tutti gli users da associare
     try {
-        const usersData_fetched = await fetch('http://localhost:3000/users/new-users');
+        //const usersData_fetched = await fetch('http://localhost:3000/users/new-users');
+        const usersData_fetched = await fetch('https://ftbtms.duckdns.org/api/users/new-users');
         const usersData = await usersData_fetched.json();
 
         console.log(usersData);
@@ -134,7 +135,8 @@ function populateTableAssoc(tableId, data) {
         option.textContent = "Seleziona";
         selectPlayer.appendChild(option);
 
-        fetch('http://localhost:3000/users/to-associate')
+        //fetch('http://localhost:3000/users/to-associate')
+        fetch('https://ftbtms.duckdns.org/api/users/to-associate')
             .then(response => response.json())
             .then(players => {
                 players.forEach(player => {
@@ -180,7 +182,8 @@ function populateTableAssoc(tableId, data) {
 
 async function createNewAssoc(idUser, idPlayer) {
     try {
-        const response = await fetch('http://localhost:3000/users/new-assoc', {
+        //const response = await fetch('http://localhost:3000/users/new-assoc', {
+        const response = await fetch('https://ftbtms.duckdns.org/api/users/new-assoc', {
             method: 'PUT',
             headers: {
                 "Content-Type": "application/json"
@@ -208,7 +211,8 @@ async function fetchUsers() {
     
     // Fetch di tutti gli users
     try {
-        const usersData_fetched = await fetch('http://localhost:3000/users');
+        //const usersData_fetched = await fetch('http://localhost:3000/users');
+        const usersData_fetched = await fetch('https://ftbtms.duckdns.org/api/users');
         const usersData = await usersData_fetched.json();
 
         console.log(usersData);
@@ -262,7 +266,8 @@ function createTableManageUsersCell(textContent) {
 
 async function showUserDetails(userId) { //VALUTARE SE SIA MEGLIO PASSARE TUTTO L'USER O SOLO L'ID PER POI FETCHARE L'USER SINGOLO
     try {
-        const response = await fetch(`http://localhost:3000/users/${userId}`);
+        //const response = await fetch(`http://localhost:3000/users/${userId}`);
+        const response = await fetch(`https://ftbtms.duckdns.org/api/users/${userId}`);
         const userDetails = await response.json();
         console.log(userDetails);
 

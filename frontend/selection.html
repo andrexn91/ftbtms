@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selezione Giocatori</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="selection.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button onclick="goToHome()">🏠</button>
+            <h1>Simulazione squadre</h1>
+            <div class="user-photo" id="user-photo"></div>
+        </header>
+
+        <div class="dropdown" id="dropdown-menu">
+            <a href="#" onclick="goToProfile()">Profilo</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+
+        <main>
+            
+            <form id="selection-form">
+                
+                <label for="player-count">Numero di giocatori:</label>
+                <select id="player-count">
+                    <option value="0">Seleziona</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                    <option value="16">16</option>
+                    <option value="18">18</option>
+                    <option value="20">20</option>
+                    <option value="22">22</option>
+                </select>
+
+                <div id="player-selection-area">
+                    <!-- Dropdown dinamici caricati da DB -->
+
+                    <!--////////////////////////////////////////////////////////////////////////////-->
+                    <table id="table-selection">
+                        <thead>
+                            <tr>
+                                <th data-column="SEL0" style="width: 15%;">Team <span></span></th>
+                                <th data-column="SEL1" style="width: 15%;">Portiere <span></span></th>
+                                <th data-column="SEL2" style="width: 50%;">Giocatore <span></span></th>
+                                <th data-column="SEL3">Condiz. fisica <span></span></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                    <!--////////////////////////////////////////////////////////////////////////////-->
+
+                </div>
+                <button type="submit">Avvia script</button>
+            </form>
+
+            <div id="log-area">
+                <table id="table-log">
+                    <tbody></tbody>
+                </table>
+            </div>
+            
+            <div id="result-area">
+                <table id="table-result">
+                    <thead>
+                        <tr>
+                            <th data-column="RES0" style="width: 50%;">⚪ Bianchi</th>
+                            <th data-column="RES0">Neri ⚫</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

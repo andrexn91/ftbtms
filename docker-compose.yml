@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: backend
+    expose:
+      - 5000  # porta interna del backend
+    networks:
+      - sito
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    expose:
+      - 3000  # porta interna del frontend
+    networks:
+      - sito
+
+networks:
+  sito:
+
+volumes:
+  caddy_data:
+  caddy_config:

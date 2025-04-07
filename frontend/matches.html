@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Partite</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="matches.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button onclick="goToHome()">🏠</button>
+            <h1>Lista Partite</h1>
+            <div class="user-photo" id="user-photo"></div>
+        </header>
+
+        <div class="dropdown" id="dropdown-menu">
+            <a href="#" onclick="goToProfile()">Profilo</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+
+        <button id="createMatch" class="createButton" onclick="newMatch()">Nuova partita</button>
+
+        <!-- Modale Crea Match -->
+        <div id="newMatchModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Crea Match</h2>
+                <form id="newMatchForm">
+                    <label for="data">Data</label>
+                    <input type="date" id="data" name="data">
+                    <label for="orario">Ora</label>
+                    <input type="time" id="orario" name="orario">
+                    <label for="pitch-select">Campo</label>
+                    <select id="pitch-select" name="campo"></select> <!--Popolato dinamicamente nel js-->
+                    <label for="players-select">Numero di giocatori</label>
+                    <select id="players-select" name="giocatori">
+                        <option value="10">10</option>
+                        <option value="12">12</option>
+                        <option value="14">14</option>
+                        <option value="16" selected="selected">16</option>
+                        <option value="18">18</option>
+                        <option value="20">20</option>
+                        <option value="22">22</option>
+                    </select>
+                    <label for="cashier-select">Cassiere</label>
+                    <select id="cashier-select" name="cassiere"></select> <!--Popolato dinamicamente nel js-->
+
+                    <button type="submit">Conferma</button>
+                </form>
+            </div>
+        </div>
+
+
+
+        <div id="matches" class="match-content">
+            <table id="table-match" class="sortable">
+                <thead>
+                    <tr>
+                        <th data-column="MAT0" id="date" data-order="na" style="width: 19%;">📅<span></span></th>
+                        <th data-column="MAT1" id="time" data-order="na" style="width: 19%;">🕗<span></span></th>
+                        <th data-column="MAT2" id="location" data-order="na" style="width: 19%;">📍<span></span></th>
+                        <th data-column="MAT3" id="pl_mov_avail" data-order="na" style="width: 19%;">🏃🏻<span></span></th>
+                        <th data-column="MAT4" id="pl_gk_avail" data-order="na" style="width: 19%;">🧤<span></span></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- Modale Dettagli Match -->
+        <div id="matchModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Dettagli Match</h2>
+                <div id="matchDetails"></div>
+                <div class="modal-buttons-container">
+                    <button onclick="bookMatch('player')">Prenotati come 🏃🏻</button>
+                    <button onclick="bookMatch('goalkeeper')">Prenotati come 🧤</button>
+                    <button id="bookForOthersButton">Prenota per altri</button>
+                    <button id="simulateTeamsButton" style="display: block;">Simulatore squadre</button> <!--CAMBIARE DA 'block' a 'none'-->
+                </div>
+                <div id="otherPlayersList" style="display: none;">
+                    <table id="table-otherPlayers">
+                        <thead>
+                            <tr>
+                                <th data-column="OTH0" style="width: 50%;">Nome <span></span></th>
+                                <th data-column="OTH1">Prenotazione <span></span></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modale Pagamenti -->
+        <div id="paymentsModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Dettagli Pagamenti</h2>
+                <div id="paymentsDetails"></div>
+                <table id="table-payments">
+                    <thead>
+                        <tr>
+                            <th data-column="PAY0" id="name" style="width: 30%;">Nome</th>
+                            <th data-column="PAY1" id="paid_with" style="width: 70%;">Pagamento</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <!--<script src="matches.js"></script>-->
+</body>
+</html>

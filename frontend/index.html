@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--
+    <div id="login-container" class="container">
+        <h1>Accedi</h1>
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    -->
+
+    
+
+    <div id="content" class="container" style="display: none;">
+        
+        <header>
+            <button onclick="goToHome()">🏠</button>
+            <h1 id="welcome-message"></h1>
+            <div class="user-photo" id="user-photo"></div>
+        </header>
+
+        <div class="dropdown" id="dropdown-menu">
+            <a href="#" onclick="goToProfile()">Profilo</a>
+            <a href="#" onclick="goToAdminArea()" id="admin-link">Area admin</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+        
+        
+        <div class="banner-home" style="display: none;">
+            <nav>
+                <a href="players.html">Giocatori</a>
+                <a href="matches.html">Partite</a>
+                <a href="pitches.html">Campi</a>
+                <a href="selection.html">Simulazione</a>
+            </nav>
+        </div>
+
+        <!-- MESSAGGIO PER FERMARE L'UTENTE APPENA REGISTRATO MA ANCORA NON ASSOCIATO AD UN PROFILO CALCIATORE -->
+        <div id="message-association" style="display: block;">
+            <h2>Attendi che l’admin associ il tuo account al tuo profilo calciatore.<br>Nel frattempo puoi iniziare a personalizzare il tuo profilo.</h2>
+        </div>
+
+        <br>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

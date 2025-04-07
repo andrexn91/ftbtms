@@ -1,0 +1,14 @@
+NB: tutti i seguenti comandi vanno lanciati all'interno della cartella di progetto
+
+
+//per settare il path al percorso della cartella NodeJS
+set PATH=C:\Users\andrea.raviglione\NodeJS;%PATH%
+
+//per fare il build dell'app
+npm run build
+
+//per avviare il server
+npm start
+
+//per interrompere
+ctrl+c

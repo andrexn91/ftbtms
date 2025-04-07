@@ -1,0 +1,11 @@
+https://www.freesqldatabase.com
+user: barepo7135@andinews.com
+pwd: Andrearavi91!
+
+Gestione db
+https://www.phpmyadmin.co
+Host: sql7.freesqldatabase.com
+Database name: sql7760110
+Database user: sql7760110
+Database password: mRcxb6acDW
+Port number: 3306

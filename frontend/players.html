@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Giocatori</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="players.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button onclick="goToHome()">🏠</button>
+            <h1>Lista Giocatori</h1>
+            <div class="user-photo" id="user-photo"></div>
+        </header>
+
+        <div class="dropdown" id="dropdown-menu">
+            <a href="#" onclick="goToProfile()">Profilo</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab-button" data-tab="info">Info</button>
+            <button class="tab-button" data-tab="ruoli">Ruoli</button>
+            <button class="tab-button" data-tab="fisiche">Skills Fisiche</button>
+            <button class="tab-button" data-tab="tecniche">Skills Tecniche</button>
+            <button class="tab-button" data-tab="tattiche">Skills Tattiche</button>
+            <button class="tab-button" data-tab="caratteriali">Skills Caratteriali</button>
+            <button class="tab-button" data-tab="portiere">Skills Portiere</button>
+        </div>
+
+        <div id="info" class="tab-content">
+            <table id="table-info" class="sortable">
+                <thead>
+                    <tr>
+                        <th data-column="INF0" data-order="na">Nome <span></span></th>
+                        <th data-column="INF1" data-order="na">E-mail <span></span></th>
+                        <th data-column="INF2" data-order="na">Access Level <span></span></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        
+        <div id="ruoli" class="tab-content">
+            <table id="table-ruoli" class="sortable">
+                <thead>
+                    <tr>
+                        <th data-column="ROL0" data-order="na">Nome <span></span></th>
+                        <th data-column="ROL1" data-order="na">Ruolo 1 <span></span></th>
+                        <th data-column="ROL2" data-order="na">Ruolo 2 <span></span></th>
+                        <th data-column="ROL3" data-order="na">Ruolo 3 <span></span></th>
+                        <th data-column="ROL4" data-order="na">Ruolo 4 <span></span></th>
+                        <th data-column="ROL5" data-order="na">Ruolo 5 <span></span></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        
+        <div id="fisiche" class="tab-content">
+            <table id="table-fisiche" class="sortable">
+                <thead>
+                    <tr>
+                        <th data-column="FIS0" data-order="na">Nome <span></span></th>
+                        <th data-column="FIS1" data-order="na">Agilità <span></span></th>
+                        <th data-column="FIS2" data-order="na">Elevazione <span></span></th>
+                        <th data-column="FIS3" data-order="na">Forza <span></span></th>
+                        <th data-column="FIS4" data-order="na">Resistenza <span></span></th>
+                        <th data-column="FIS5" data-order="na">Velocità <span></span></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        
+        <div id="tecniche" class="tab-content">
+            <table id="table-tecniche" class="sortable">
+                <thead>
+                    <tr>
+                        <th data-column="TEC0" data-order="na">Nome <span></span></th>
+                        <th data-column="TEC1" data-order="na">Controllo <span></span></th>
+                        <th data-column="TEC2" data-order="na">Dribbling <span></span></th>
+                        <th data-column="TEC3" data-order="na">Tiro <span></span></th>
+                        <th data-column="TEC4" data-order="na">Piede forte <span></span></th>
+                        <th data-column="TEC5" data-order="na">Piede debole <span></span></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        
+        <div id="tattiche" class="tab-content">
+            <table id="table-tattiche" class="sortable">
+                <thead>
+                    <tr>
+                        <th data-column="TAT0" data-order="na">Nome <span></span></th>
+                        <th data-column="TAT1" data-order="na">Posizionamento <span></span></th>
+                        <th data-column="TAT2" data-order="na">Marcamento <span></span></th>
+                        <th data-column="TAT3" data-order="na">Smarcamento <span></span></th>
+                        <th data-column="TAT4" data-order="na">Visione di gioco <span></span></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        
+        <div id="caratteriali" class="tab-content">
+            <table id="table-caratteriali" class="sortable">
+                <thead>
+                    <tr>
+                        <th data-column="CAR0" data-order="na">Nome <span></span></th>
+                        <th data-column="CAR1" data-order="na">Autorità <span></span></th>
+                        <th data-column="CAR2" data-order="na">Concentrazione <span></span></th>
+                        <th data-column="CAR3" data-order="na">Motivazione <span></span></th>
+                        <th data-column="CAR4" data-order="na">Spirito di sacrificio <span></span></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        
+        <div id="portiere" class="tab-content">
+            <table id="table-portiere" class="sortable">
+                <thead>
+                    <tr>
+                        <th data-column="POR0" data-order="na">Nome <span></span></th>
+                        <th data-column="POR1" data-order="na">Riflessi <span></span></th>
+                        <th data-column="POR2" data-order="na">Uscite <span></span></th>
+                        <th data-column="POR3" data-order="na">Comunicazione <span></span></th>
+                        <th data-column="POR4" data-order="na">Lanci lunghi <span></span></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
